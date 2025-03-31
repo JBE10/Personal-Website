@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Portfolio of a Backend Developer and Cyber Analyst specializing in cybersecurity and system optimization",
   icons: {
     icon: "/favicon.ico",
+
   },
 }
 
