@@ -38,7 +38,7 @@ export default function Home() {
                         </Button>
                     </div>
                     <div className="text-center text-sm text-muted-foreground">
-                        © {new Date().getFullYear()} Juan Bautista Esteban. All rights reserved.
+                        © {new Date().getFullYear()} Juan Bautista Espino. All rights reserved.
                     </div>
                 </div>
             </footer>
