@@ -22,7 +22,7 @@ export function Header() {
             <div className="flex items-center gap-4">
                 {/* Botón de descarga de CV */}
                 <Button size="lg" className="flex items-center gap-2" asChild>
-                    <a href="/resume.pdf" download>
+                    <a href="/Juan-Bautista-Espino-CV.pdf" download>
                         <Download className="h-4 w-4" />
                         Download CV
                     </a>

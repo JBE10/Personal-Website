@@ -36,7 +36,7 @@ export function Navbar() {
             Education
           </Link>
             <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
-              <a href="/resume.pdf" download>
+              <a href="/Juan-Bautista-Espino-CV.pdf" download>
                 <Download className="h-4 w-4" />
                 Download CV
               </a>
