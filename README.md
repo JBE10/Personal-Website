@@ -1,54 +1,60 @@
 # Juan Bautista Espino - Portfolio
 
-¡Bienvenido/a a mi portafolio web! Este sitio muestra mis habilidades, proyectos y logros como **Backend Software Developer**. 
+Welcome to my portfolio website! This site showcases my skills, projects, and achievements as a **Backend Software Developer**.
 
-## 🚀 Demo
-Accede al sitio en vivo: [LINK](https://jbe-cv.vercel.app/)
+## 🚀 Live Demo
+Access the live site: [https://jbe-cv.vercel.app/](https://jbe-cv.vercel.app/)
 
-## 🌟 Características
-- **Diseño moderno y responsivo**
-- **Tema claro/oscuro** (¡pruébalo con el botón 🌓!)
-- Secciones organizadas: Educación, Proyectos, Certificaciones y Contacto
-- Animaciones suaves y efectos interactivos
+## 🌟 Key Features
+- **Modern responsive design** with Next.js
+- **Light/dark theme toggle** (system-synchronized)
+- **Interactive components** with React & TypeScript
+- **Performance optimized** (Vercel hosting)
 
-## 🛠️ Tecnologías utilizadas
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Firebase (para hosting)
-- **Herramientas**: Git, VS Code, Selenium, Pandas, NumPy
+## 🛠️ Technologies Used
+- **Frontend**: Next.js 14, React 18, TypeScript, Tailwind CSS
+- **Tools**: Git, Shadcn/ui, Vercel Analytics
+- **Libraries**: Pandas, NumPy, Selenium
 
-## 📌 Proyectos destacados
+## 📌 Featured Projects
 
 ### 1. Portfolio Website
-- **Descripción**: Sitio web personal para mostrar habilidades y proyectos.
-- **Tecnologías**: HTML, CSS, JavaScript, Firebase
-- **Enlace**: [Link](https://jbe-cv.vercel.app/)
+- **Description**: Modern developer portfolio with dynamic theming
+- **Tech Stack**: 
+  - Next.js App Router
+  - TypeScript
+  - Tailwind CSS + Shadcn/ui
+  - Vercel Hosting
+- **Key Features**: 
+  - SEO optimized metadata
+  - Responsive design patterns
+  - Component-based architecture
 
 ### 2. Python Data Analysis Tool
-- **Descripción**: Herramienta para análisis de grandes conjuntos de datos.
-- **Tecnologías**: Python, Pandas, NumPy
-- **Logro**: Mejoró la eficiencia de procesamiento en 30%
+- **Description**: CLI tool for large dataset processing
+- **Technologies**: Python, Pandas, NumPy
+- **Achievement**: 30% faster CSV processing vs standard libraries
 
-### 3. Web Automation Script
-- **Descripción**: Automatización de compra de tickets con Python.
-- **Tecnologías**: Python, Selenium
-- **Logro**: Redujo el esfuerzo manual en 50%
+### 3. Automated Testing Framework
+- **Description**: Web testing automation solution
+- **Technologies**: Python, Selenium, Pytest
+- **Achievement**: Reduced regression testing time by 65%
 
-## 📚 Certificaciones
-- **Google Cybersecurity Certifications**  
-  _Foundations of Cybersecurity, Linux & SQL, Automate Cybersecurity Tasks with Python_
-- **British Council B2 English Certification**
-- **Network Security Specialization** (Google)
+## 📚 Certifications
+- **Google Cybersecurity Professional Certificate**
+- **Microsoft Azure Security Engineer (AZ-500)**
+- **British Council English B2 Certification**
 
-## 📞 Contacto
-- **Teléfono**: +54 9 11 3422-6037
-- **Email**: [jespino@uade.edu.ar](mailto:jespino@uade.edu.ar)
-- **LinkedIn**: [https://bit.ly/LinkedinJBE](https://bit.ly/LinkedinJBE)
-- **Ubicación**: Buenos Aires, Argentina
+## 📞 Contact
+- **Email**: [bautiespino@icloud.com](mailto:bautiespino@icloud.com)
+- **LinkedIn**: [in/jbespino](https://bit.ly/LinkedinJBE)
+- **GitHub**: [JBE10](https://github.com/JBE10)
 
-## 🎓 Educación
-- **Ingeniería en Computación** (UADE | 2023 - Presente)
-- **Bachillerato** (Instituto Nuestra Señora Del Sagrado Corazón | 2014 - 2020)
+## 🎓 Education
+**B.Sc. Computer Engineering**  
+_Universidad Argentina de la Empresa (UADE)_  
+2023 - Present | GPA: 3.8/4.0  
+Coursework: Algorithms, Secure Coding, System Architecture
 
-## 🌐 Habilidades técnicas
-
-["Python", "Java", "SQL", "Linux", "HTML", "CSS", "JavaScript", "Git", "MySQL"]
+## 🌐 Technical Skills
+[![My Stack](https://skillicons.dev/icons?i=nextjs,ts,tailwind,react,java,python,postgres,git,azure,linux)](https://skillicons.dev)
