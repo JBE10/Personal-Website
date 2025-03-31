@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of a Backend Developer and Cyber Analyst specializing in cybersecurity and system optimization",
   icons: {
-    icon: "public/favicon.ico",
+    icon: "/favicon.ico",
   },
 }
 
@@ -35,4 +35,3 @@ export default function RootLayout({
 
 
 
-import './globals.css'
