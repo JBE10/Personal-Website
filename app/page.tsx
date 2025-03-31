@@ -13,9 +13,9 @@ export default function Home() {
 
             <main className="container mx-auto px-4 py-8 space-y-16">
                 <AboutMe />
-                <Education />
                 <Projects />
                 <Certifications />
+                <Education />
             </main>
 
             <footer className="border-t py-6">
@@ -28,7 +28,7 @@ export default function Home() {
                         </Button>
                         <Button variant="ghost" size="icon" asChild>
                             <a
-                                href="https://linkedin.com/in/your-linkedin"
+                                href="https://www.linkedin.com/in/jbespino/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn"

@@ -25,15 +25,16 @@ export function Navbar() {
             <Link href="#about" className="text-foreground/80 hover:text-foreground transition-colors">
               About Me
             </Link>
-            <Link href="#education" className="text-foreground/80 hover:text-foreground transition-colors">
-              Education
-            </Link>
+
             <Link href="#projects" className="text-foreground/80 hover:text-foreground transition-colors">
               Projects
             </Link>
             <Link href="#certifications" className="text-foreground/80 hover:text-foreground transition-colors">
               Certifications
             </Link>
+            <Link href="#education" className="text-foreground/80 hover:text-foreground transition-colors">
+            Education
+          </Link>
             <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
               <a href="/resume.pdf" download>
                 <Download className="h-4 w-4" />
@@ -64,13 +65,7 @@ export function Navbar() {
                 >
                   About Me
                 </Link>
-                <Link
-                    href="#education"
-                    className="text-foreground/80 hover:text-foreground transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                  Education
-                </Link>
+
                 <Link
                     href="#projects"
                     className="text-foreground/80 hover:text-foreground transition-colors"
@@ -84,6 +79,13 @@ export function Navbar() {
                     onClick={() => setIsMenuOpen(false)}
                 >
                   Certifications
+                </Link>
+                <Link
+                    href="#education"
+                    className="text-foreground/80 hover:text-foreground transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                  Education
                 </Link>
                 <Button variant="outline" size="sm" className="flex items-center gap-2 w-full justify-center" asChild>
                   <a href="/resume.pdf" download>
