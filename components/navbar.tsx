@@ -13,8 +13,8 @@ export function Navbar() {
       <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 flex h-16 items-center justify-between">
           <div className="font-bold text-xl">
-            <Button variant="ghost" className="p-0 font-bold text-xl" asChild>
-              <a href="/resume.pdf" download>
+            <Button variant="ghost" className="p-0 font-bold text-xl hover:bg-transparent" asChild>
+              <a href="#about" className="text-foreground/80 hover:text-foreground/80">
                 JBE
               </a>
             </Button>
