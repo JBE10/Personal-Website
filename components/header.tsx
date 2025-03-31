@@ -10,7 +10,7 @@ export function Header() {
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
           {/* Replace with your actual photo path */}
-          <Image src="/images/profile-photo.jpg" alt="Profile Photo" fill className="object-cover" priority />
+          <Image src="images/juan-bautista-espino.jpg" alt="Profile Photo" fill className="object-cover" priority />
         </div>
         <div>
           <h1 className="text-3xl font-bold">Juan Bautista Esteban</h1>
