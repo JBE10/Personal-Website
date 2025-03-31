@@ -3,7 +3,7 @@
 ¡Bienvenido/a a mi portafolio web! Este sitio muestra mis habilidades, proyectos y logros como **Backend Software Developer**. 
 
 ## 🚀 Demo
-Accede al sitio en vivo: [https://bit.ly/JBEcv](https://jbe-cv.vercel.app/)
+Accede al sitio en vivo: [LINK](https://jbe-cv.vercel.app/)
 
 ## 🌟 Características
 - **Diseño moderno y responsivo**
@@ -21,7 +21,7 @@ Accede al sitio en vivo: [https://bit.ly/JBEcv](https://jbe-cv.vercel.app/)
 ### 1. Portfolio Website
 - **Descripción**: Sitio web personal para mostrar habilidades y proyectos.
 - **Tecnologías**: HTML, CSS, JavaScript, Firebase
-- **Enlace**: [https://bit.ly/JBEcv]([https://bit.ly/JBEcv](https://jbe-cv.vercel.app/))
+- **Enlace**: [Link](https://jbe-cv.vercel.app/)
 
 ### 2. Python Data Analysis Tool
 - **Descripción**: Herramienta para análisis de grandes conjuntos de datos.
