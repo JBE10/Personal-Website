@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Download, Github, Linkedin } from "lucide-react"
+import {Download, Github, Linkedin, Mail} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Header() {
@@ -27,20 +27,28 @@ export function Header() {
                         Download CV
                     </a>
                 </Button>
-
-                {/* Botón de GitHub */}
-                <Button variant="ghost" size="icon" asChild>
-                    <a href="https://github.com/JBE10" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <Github className="h-5 w-5" />
-                    </a>
-                </Button>
-
-                {/* Botón de LinkedIn */}
-                <Button variant="ghost" size="icon" asChild>
-                    <a href="https://www.linkedin.com/in/jbespino/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <Linkedin className="h-5 w-5" />
-                    </a>
-                </Button>
+                <div className="flex items-center gap-3">
+                    <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                        <a href="mailto:bautiespino@icloud.com" aria-label="Email">
+                            <Mail className="h-5 w-5" />
+                        </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                        <a
+                            href="https://linkedin.com/in/your-linkedin"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <Linkedin className="h-5 w-5" />
+                        </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                        <a href="https://github.com/JBE10" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <Github className="h-5 w-5" />
+                        </a>
+                    </Button>
+                </div>
             </div>
         </div>
     )
