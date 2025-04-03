@@ -5,6 +5,7 @@ import { Certifications } from "@/components/certifications"
 import { Education } from "@/components/education"
 import {Github, Linkedin, Mail} from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {Skills} from "@/components/skills"
 import { Analytics } from "@vercel/analytics/react"
 export default function Home() {
     return (
@@ -15,7 +16,10 @@ export default function Home() {
                 <AboutMe />
                 <Projects />
                 <Certifications />
+                <Skills />
                 <Education />
+
+
             </main>
 
             <footer className="border-t py-6">
