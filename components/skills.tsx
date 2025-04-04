@@ -25,21 +25,28 @@ export function Skills() {
         <section id="skills" className="scroll-mt-16">
             <h2 className="section-title">Technical Skills</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-8">
                 {skillCategories.map((category, index) => (
-                    <div key={index} className="border rounded-lg p-6 shadow-sm">
-                        <h3 className="text-xl font-semibold mb-4">{category.name}</h3>
-                        <div className="flex flex-wrap gap-3">
+                    <div key={index} className="space-y-3">
+                        <h3 className="text-lg font-medium text-primary">{category.name}</h3>
+                        <div className="flex flex-wrap gap-2">
                             {category.skills.map((skill, skillIndex) => (
-                                <Badge key={skillIndex} variant="outline" className="px-4 py-2 text-base font-medium">
+                                <Badge
+                                    key={skillIndex}
+                                    className="bg-secondary hover:bg-secondary/80 text-secondary-foreground px-3 py-1"
+                                >
                                     {skill}
                                 </Badge>
                             ))}
                         </div>
+                        {index < skillCategories.length - 1 && (
+                            <div className="pt-4">
+                                <div className="border-t border-border/40"></div>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
         </section>
     )
 }
-
