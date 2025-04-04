@@ -10,7 +10,7 @@ const education = [
             "Focusing on software development, cybersecurity, and system optimization. Participating in academic projects using agile methodologies.",
         skills: ["Java", "Python", "Algorithms", "Data Structures", "Cybersecurity", "Software Engineering"],
     },
-    // You can add more education entries here
+
 ]
 
 export function Education() {
