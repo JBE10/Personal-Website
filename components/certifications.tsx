@@ -1,4 +1,6 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+"use client"
+
+import { motion } from "framer-motion"
 import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -76,26 +78,38 @@ export function Certifications() {
         <h2 className="section-title">Certifications</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle>{cert.title}</CardTitle>
-                  <CardDescription className="flex items-center justify-between">
-                    <span>{cert.issuer}</span>
-                    <span className="text-sm font-medium">{cert.date}</span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm">{cert.description}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
+              <motion.div
+                  key={index}
+                  className="bg-card/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-border/50 transition-all duration-300 hover:shadow-lg hover:border-border/80"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.05,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+              >
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-lg font-medium">{cert.title}</h3>
+                    <span className="text-xs bg-secondary rounded-full px-2 py-0.5">{cert.date}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
+                  <p className="text-sm mb-4 line-clamp-3">{cert.description}</p>
+                  <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
+                    <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                    >
+                      <ExternalLink className="h-4 w-4" />
                       View Certificate
                     </a>
                   </Button>
-                </CardFooter>
-              </Card>
+                </div>
+              </motion.div>
           ))}
         </div>
       </section>
