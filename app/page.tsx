@@ -76,7 +76,7 @@ export default function Home() {
                         </Button>
                         <Button variant="ghost" size="icon" className="rounded-full h-10 w-10" asChild>
                             <a
-                                href="https://linkedin.com/in/your-linkedin"
+                                href="https://www.linkedin.com/in/jbespino/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn"

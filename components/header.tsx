@@ -35,7 +35,7 @@ export function Header() {
                     </Button>
                     <Button variant="ghost" size="icon" className="rounded-full" asChild>
                         <a
-                            href="https://linkedin.com/in/your-linkedin"
+                            href="https://www.linkedin.com/in/jbespino/"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
