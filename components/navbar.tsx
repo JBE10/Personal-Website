@@ -29,7 +29,7 @@ export function Navbar() {
       // Delay removing the menu from DOM to allow for exit animation
       const timer = setTimeout(() => {
         setMenuRendered(false)
-      }, 300) // Match this with the CSS transition duration
+      }, 500) // Increased from 300ms to 500ms for smoother exit
       document.body.style.overflow = ""
       return () => clearTimeout(timer)
     }
@@ -75,25 +75,11 @@ export function Navbar() {
               About Me
             </a>
             <a
-                href="#projects"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#projects")}
-            >
-              Projects
-            </a>
-            <a
                 href="#skills"
                 className="text-foreground/80 hover:text-foreground transition-colors text-sm"
                 onClick={(e) => handleNavLinkClick(e, "#skills")}
             >
               Skills
-            </a>
-            <a
-                href="#certifications"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#certifications")}
-            >
-              Certifications
             </a>
             <a
                 href="#education"
@@ -102,7 +88,20 @@ export function Navbar() {
             >
               Education
             </a>
-
+            <a
+                href="#projects"
+                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
+                onClick={(e) => handleNavLinkClick(e, "#projects")}
+            >
+              Projects
+            </a>
+            <a
+                href="#certifications"
+                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
+                onClick={(e) => handleNavLinkClick(e, "#certifications")}
+            >
+              Certifications
+            </a>
             <a
                 href="/Juan-Bautista-Espino-CV.pdf"
                 download
@@ -124,12 +123,12 @@ export function Navbar() {
                 aria-label="Toggle menu"
             >
             <span
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
             >
               <Menu className="h-5 w-5" />
             </span>
               <span
-                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
               >
               <X className="h-5 w-5" />
             </span>
@@ -138,28 +137,28 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu with solid background matching theme */}
+        {/* Mobile Menu with gentler animations */}
         {menuRendered && (
             <div
-                className={`fixed inset-0 z-[55] md:hidden transition-all duration-300 ease-in-out bg-background border-b ${
-                    isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+                className={`fixed inset-0 z-[55] md:hidden transition-all duration-500 ease-in-out bg-background border-b ${
+                    isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-10px] pointer-events-none"
                 }`}
             >
               <div className="pt-20 pb-8 px-6 flex flex-col space-y-6">
                 {[
                   { name: "About Me", href: "#about" },
-                  { name: "Projects", href: "#projects" },
                   { name: "Skills", href: "#skills" },
-                  { name: "Certifications", href: "#certifications" },
                   { name: "Education", href: "#education" },
+                  { name: "Projects", href: "#projects" },
+                  { name: "Certifications", href: "#certifications" },
                 ].map((item, index) => (
                     <a
                         key={item.name}
                         href={item.href}
-                        className={`text-2xl font-medium text-foreground transition-all duration-300 ease-in-out transform ${
-                            isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                        className={`text-2xl font-medium text-foreground transition-all duration-400 ease-out transform ${
+                            isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                         }`}
-                        style={{ transitionDelay: `${index * 50}ms` }}
+                        style={{ transitionDelay: `${index * 30}ms` }}
                         onClick={(e) => handleNavLinkClick(e, item.href)}
                     >
                       {item.name}
@@ -168,10 +167,10 @@ export function Navbar() {
                 <a
                     href="/Juan-Bautista-Espino-CV.pdf"
                     download
-                    className={`inline-flex items-center justify-center rounded-full px-4 py-3 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 ease-in-out transform w-full ${
-                        isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                    className={`inline-flex items-center justify-center rounded-full px-4 py-3 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-400 ease-out transform w-full ${
+                        isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                     }`}
-                    style={{ transitionDelay: "250ms" }}
+                    style={{ transitionDelay: "150ms" }}
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Download CV
