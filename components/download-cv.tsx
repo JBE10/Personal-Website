@@ -1,20 +1,21 @@
-import { Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Download } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
-export function DownloadCV() {
-  return (
-    <section id="download" className="scroll-mt-16 flex flex-col items-center py-8">
-      <h2 className="text-2xl font-bold mb-4">Download CV</h2>
-      <p className="text-center text-muted-foreground max-w-2xl mb-6">
-        Download my complete resume to learn more about my experience, education, and technical skills.
-      </p>
-      <Button size="lg" className="flex items-center gap-2" asChild>
-        <a href="/resume.pdf" download>
-          <Download className="h-4 w-4" />
-          Download CV (English)
-        </a>
-      </Button>
-    </section>
-  )
+export default function DownloadCV() {
+    return (
+        <Button
+            asChild
+            size="lg"
+            className="rounded-full px-6 py-6 h-auto gap-2"
+        >
+            <a
+                href="/Juan-Bautista-Espino-CV.pdf"
+                download
+                aria-label="Descargar CV"
+            >
+                <Download className="h-5 w-5" />
+                Download CV
+            </a>
+        </Button>
+    )
 }
-
