@@ -1,7 +1,9 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Github } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const projects = [
   {
@@ -45,34 +47,45 @@ export function Projects() {
   return (
       <section id="projects" className="scroll-mt-16">
         <h2 className="section-title">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
+              <motion.div
+                  key={index}
+                  className="bg-card/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-border/50 transition-all duration-300 hover:shadow-lg hover:border-border/80"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+              >
+                <div className="p-8">
+                  <h3 className="text-xl font-medium mb-3">{project.title}</h3>
+                  <p className="text-muted-foreground mb-6">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="secondary">
+                        <Badge key={tagIndex} variant="secondary" className="rounded-full">
                           {tag}
                         </Badge>
                     ))}
                   </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
+                  <Button variant="outline" size="sm" className="rounded-full w-full" asChild>
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                    >
+                      <Github className="h-4 w-4" />
                       View on GitHub
                     </a>
                   </Button>
-                </CardFooter>
-              </Card>
+                </div>
+              </motion.div>
           ))}
         </div>
       </section>
   )
 }
-
