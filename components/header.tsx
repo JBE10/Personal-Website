@@ -37,11 +37,11 @@ export function Header() {
                             </a>
                         </Button>
                         <div className="flex items-center gap-4">
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
-                                <a href="mailto:bautiespino@icloud.com" aria-label="Email">
-                                    <Mail className="h-5 w-5" />
-                                </a>
-                            </Button>
+        <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild type="button">
+            <a href="mailto:bautiespino@icloud.com" aria-label="Email">
+                <Mail className="h-5 w-5" />
+            </a>
+        </Button>
                             <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
                                 <a
                                     href="https://www.linkedin.com/in/jbespino/"
