@@ -21,6 +21,8 @@ export function AboutMe() {
                         <strong>secure and scalable systems</strong>, optimizing software performance through algorithmic solutions,
                         and ensuring robust <strong>data integrity</strong>.
                     </p>
+
+
                     <p>
                         I hold certifications in{" "}
                         <strong>Google Cybersecurity, Linux/SQL, and Microsoft Azure Security (AZ-500)</strong>, which have
