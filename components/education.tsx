@@ -7,7 +7,7 @@ const education = [
     {
         institution: "Universidad Argentina de la Empresa (UADE)",
         degree: "Computer Engineering",
-        period: "2020 - Present",
+        period: "2023 - Present",
         description:
             "Focusing on software development, cybersecurity, and system optimization. Participating in academic projects using agile methodologies.",
         skills: ["Java", "Python", "Algorithms", "Data Structures", "Cybersecurity", "Software Engineering"],
