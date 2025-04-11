@@ -40,16 +40,7 @@ export function AboutMe() {
                         and apply innovative solutions to complex challenges in <strong>backend development</strong> and{" "}
                         <strong>cybersecurity</strong>.
                     </p>
-                    <div className="mt-6 flex items-center">
-                        <a
-                            href="mailto:bautiespino@icloud.com"
-                            className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <Mail className="h-5 w-5 mr-2" />
-                            <span>bautiespino@icloud.com</span>
-                        </a>
-                    </div>
+
                 </div>
             </motion.div>
         </section>

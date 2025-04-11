@@ -37,11 +37,6 @@ export function Header() {
                             </a>
                         </Button>
                         <div className="flex items-center gap-4">
-        <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild type="button">
-            <a href="mailto:bautiespino@icloud.com" aria-label="Email">
-                <Mail className="h-5 w-5" />
-            </a>
-        </Button>
                             <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
                                 <a
                                     href="https://www.linkedin.com/in/jbespino/"
@@ -55,6 +50,16 @@ export function Header() {
                             <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
                                 <a href="https://github.com/JBE10" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                     <Github className="h-5 w-5" />
+                                </a>
+                            </Button>
+                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
+                                <a
+                                    href="mailto:bautiespino@icloud.com"
+                                    className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Mail className="h-5 w-5 mr-2" />
+                                    <span>bautiespino@icloud.com</span>
                                 </a>
                             </Button>
                         </div>
