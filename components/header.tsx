@@ -39,6 +39,16 @@ export function Header() {
                         <div className="flex items-center gap-4">
                             <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
                                 <a
+                                    href="mailto:bautiespino@icloud.com"
+                                    className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Mail className="h-5 w-5 " />
+
+                                </a>
+                            </Button>
+                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
+                                <a
                                     href="https://www.linkedin.com/in/jbespino/"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -52,16 +62,7 @@ export function Header() {
                                     <Github className="h-5 w-5" />
                                 </a>
                             </Button>
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
-                                <a
-                                    href="mailto:bautiespino@icloud.com"
-                                    className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    <Mail className="h-5 w-5 mr-2" />
 
-                                </a>
-                            </Button>
                         </div>
                     </div>
                 </motion.div>
