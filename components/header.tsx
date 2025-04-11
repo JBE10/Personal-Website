@@ -22,7 +22,7 @@ export function Header() {
                         </div>
                         <div className="text-center md:text-left">
                             <h1 className="text-4xl md:text-5xl font-semibold mb-2">Juan Bautista Espino</h1>
-                            <p className="text-xl text-muted-foreground">Backend Developer & Cyber Analyst</p>
+                            <p className="text-xl text-muted-foreground">Backend Developer & Network Security Analyst</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center md:items-end gap-4">
