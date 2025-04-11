@@ -39,15 +39,8 @@ export function Header() {
                                 <span>Download CV</span>
                             </a>
                         </Button>
-                        <div className="flex items-center gap-4">
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
-                                <a
-                                    href="mailto:bautiespino@icloud.com"
-                                    aria-label="Email"
-                                >
-                                    <Mail className="h-5 w-5" />
-                                </a>
-                            </Button>
+                        <div className="flex items-center gap-3">
+
                             <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
                                 <a
                                     href="https://www.linkedin.com/in/jbespino/"
@@ -66,6 +59,14 @@ export function Header() {
                                     aria-label="GitHub"
                                 >
                                     <Github className="h-5 w-5" />
+                                </a>
+                            </Button>
+                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
+                                <a
+                                    href="mailto:bautiespino@icloud.com"
+                                    aria-label="Email"
+                                >
+                                    <Mail className="h-5 w-5" />
                                 </a>
                             </Button>
                         </div>
