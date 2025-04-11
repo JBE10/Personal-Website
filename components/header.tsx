@@ -59,7 +59,7 @@ export function Header() {
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <Mail className="h-5 w-5 mr-2" />
-                                    <span>bautiespino@icloud.com</span>
+
                                 </a>
                             </Button>
                         </div>
