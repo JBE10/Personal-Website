@@ -17,7 +17,6 @@ export function Header() {
                 >
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/10 shadow-xl">
-                            {/* Replace with your actual photo path */}
                             <Image src="/images/juan-bautista-espino.jpg" alt="Profile Photo" fill className="object-cover" priority />
                         </div>
                         <div className="text-center md:text-left">
@@ -25,29 +24,31 @@ export function Header() {
                             <p className="text-xl text-muted-foreground">Backend Developer & Network Security Analyst</p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center md:items-end gap-4">
+                    <div className="flex flex-col items-center md:items-end gap-4 z-10">
                         <Button
                             asChild
                             size="lg"
-                            className="rounded-full px-6 py-6 h-auto flex items-center gap-2"
+                            className="rounded-full px-6 py-6 h-auto flex items-center gap-2 relative z-20"
                         >
-                            <a href="/Juan-Bautista-Espino-CV.pdf" download>
+                            <a
+                                href="/Juan-Bautista-Espino-CV.pdf"
+                                download
+                                className="flex items-center gap-2"
+                            >
                                 <Download className="h-5 w-5" />
-                                Download CV
+                                <span>Download CV</span>
                             </a>
                         </Button>
                         <div className="flex items-center gap-4">
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
+                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
                                 <a
                                     href="mailto:bautiespino@icloud.com"
-                                    className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-                                    onClick={(e) => e.stopPropagation()}
+                                    aria-label="Email"
                                 >
-                                    <Mail className="h-5 w-5 " />
-
+                                    <Mail className="h-5 w-5" />
                                 </a>
                             </Button>
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
+                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
                                 <a
                                     href="https://www.linkedin.com/in/jbespino/"
                                     target="_blank"
@@ -57,20 +58,24 @@ export function Header() {
                                     <Linkedin className="h-5 w-5" />
                                 </a>
                             </Button>
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10" asChild>
-                                <a href="https://github.com/JBE10" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
+                                <a
+                                    href="https://github.com/JBE10"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                >
                                     <Github className="h-5 w-5" />
                                 </a>
                             </Button>
-
                         </div>
                     </div>
                 </motion.div>
             </div>
 
             {/* Background decorative elements */}
-            <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
-            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
+            <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
         </div>
     )
 }
