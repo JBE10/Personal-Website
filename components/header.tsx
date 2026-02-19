@@ -32,11 +32,12 @@ export function Header() {
                             className="liquid-button rounded-full px-6 py-6 h-auto flex items-center gap-2 relative z-20"
                         >
                             <a
-                                href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
+                                href="/CV/CV-Juan-Bautista-Espino.pdf"
+                                download="CV-Juan-Bautista-Espino.pdf"
                                 className="flex items-center gap-2"
                             >
                                 <Download className="h-5 w-5" />
-                                <span>Request CV</span>
+                                <span>Download CV</span>
                             </a>
                         </Button>
                         <div className="flex items-center gap-3">

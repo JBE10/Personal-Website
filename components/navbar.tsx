@@ -103,7 +103,7 @@ export function Navbar() {
                   : "bg-transparent"
           }`}
       >
-        <div className="apple-container flex h-16 items-center justify-between">
+        <div className="apple-container relative grid h-16 grid-cols-[1fr_auto] items-center md:grid-cols-[1fr_auto_1fr]">
           <div className="font-medium text-xl">
             <a href="#" className="p-0 font-semibold text-xl tracking-tight">
               JBE
@@ -111,7 +111,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 justify-self-center">
             <div className="rounded-full border border-border/60 bg-background/45 p-1 backdrop-blur-xl">
               <div className="flex items-center gap-1">
                 {navItems.map((item) => {
@@ -133,9 +133,13 @@ export function Navbar() {
                 })}
               </div>
             </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-3 justify-self-end">
             <a
-                href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
+                href="#contact"
                 className="liquid-button"
+                onClick={(e) => handleNavLinkClick(e, "#contact")}
             >
               <Download className="h-4 w-4 mr-2" />
               Request CV
@@ -193,11 +197,12 @@ export function Navbar() {
                     </a>
                 ))}
                 <a
-                    href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
+                    href="#contact"
                     className={`liquid-button py-3 text-base w-full transition-all duration-400 ease-out transform ${
                         isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                     }`}
                     style={{ transitionDelay: "150ms" }}
+                    onClick={(e) => handleNavLinkClick(e, "#contact")}
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Request CV

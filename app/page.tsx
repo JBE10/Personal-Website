@@ -72,7 +72,7 @@ export default function Home() {
                 </motion.div>
             </motion.main>
 
-            <footer className="border-t py-12">
+            <footer id="contact" className="border-t py-12 scroll-mt-16">
                 <div className="apple-container flex flex-col items-center gap-6">
                     <div className="flex items-center gap-6">
                         <Button variant="ghost" size="icon" className="rounded-full h-10 w-10" asChild>
