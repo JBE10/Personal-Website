@@ -18,7 +18,6 @@ const navItems = [
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [menuRendered, setMenuRendered] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
 
   useEffect(() => {
@@ -62,18 +61,11 @@ export function Navbar() {
     }
   }, [])
 
-  // Handle menu open/close with animation timing
+  // Lock body scroll when mobile menu is open.
   useEffect(() => {
-    if (isMenuOpen) {
-      setMenuRendered(true)
-      document.body.style.overflow = "hidden"
-    } else {
-      // Delay removing the menu from DOM to allow for exit animation
-      const timer = setTimeout(() => {
-        setMenuRendered(false)
-      }, 500) // Increased from 300ms to 500ms for smoother exit
+    document.body.style.overflow = isMenuOpen ? "hidden" : ""
+    return () => {
       document.body.style.overflow = ""
-      return () => clearTimeout(timer)
     }
   }, [isMenuOpen])
 
@@ -98,12 +90,14 @@ export function Navbar() {
   return (
       <nav
           className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-              scrolled || isMenuOpen
-                  ? "backdrop-blur-xl border-b border-border/60 bg-background/55 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.45)]"
-                  : "bg-transparent"
+              isMenuOpen
+                  ? "border-b border-border/60 bg-background"
+                  : scrolled
+                      ? "backdrop-blur-xl border-b border-border/60 bg-background/55 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.45)]"
+                      : "bg-transparent"
           }`}
       >
-        <div className="apple-container relative grid h-16 grid-cols-[1fr_auto] items-center md:grid-cols-[1fr_auto_1fr]">
+        <div className="apple-container hidden md:grid relative h-16 grid-cols-[1fr_auto_1fr] items-center">
           <div className="font-medium text-xl">
             <a href="#" className="p-0 font-semibold text-xl tracking-tight">
               JBE
@@ -146,67 +140,71 @@ export function Navbar() {
             </a>
             <ThemeToggle />
           </div>
-
-          {/* Mobile Navigation Button */}
-          <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
-            <button
-                type="button"
-                className="rounded-full relative z-[60] p-2 text-foreground"
-                onClick={toggleMenu}
-                aria-label="Toggle menu"
-            >
-            <span
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
-            >
-              <Menu className="h-5 w-5" />
-            </span>
-              <span
-                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
-              >
-              <X className="h-5 w-5" />
-            </span>
-              <span className="sr-only">Toggle menu</span>
-            </button>
-          </div>
         </div>
 
-        {/* Mobile Menu with gentler animations */}
-        {menuRendered && (
-            <div
-                className={`fixed inset-0 z-[55] md:hidden transition-all duration-500 ease-in-out bg-background/90 backdrop-blur-xl border-b ${
-                    isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-10px] pointer-events-none"
-                }`}
-            >
-              <div className="pt-20 pb-8 px-6 flex flex-col space-y-6">
-                {navItems.map((item, index) => (
-                    <a
-                        key={item.name}
-                        href={item.href}
-                        className={`text-2xl font-medium transition-all duration-400 ease-out transform rounded-xl px-3 py-2 ${
-                            activeSection === item.href.replace("#", "")
-                                ? "text-primary bg-primary/10 border border-primary/25"
-                                : "text-foreground"
-                        } ${
-                            isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
-                        }`}
-                        style={{ transitionDelay: `${index * 30}ms` }}
-                        onClick={(e) => handleNavLinkClick(e, item.href)}
-                    >
-                      {item.name}
-                    </a>
-                ))}
-                <a
-                    href="/CV/CV-Juan-Bautista-Espino.pdf"
-                    download="CV-Juan-Bautista-Espino.pdf"
-                    className={`liquid-button py-3 text-base w-full transition-all duration-400 ease-out transform ${
-                        isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
-                    }`}
-                    style={{ transitionDelay: "150ms" }}
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Download CV
+        <div className="apple-container md:hidden h-14 flex items-center justify-between">
+          <span className="w-10" aria-hidden="true" />
+          <a href="#" className="font-semibold text-lg tracking-tight">
+            JBE
+          </a>
+          <button
+              type="button"
+              className="rounded-full h-10 w-10 flex items-center justify-center text-foreground border border-border/60 bg-background/85"
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+
+        {isMenuOpen && (
+            <div className="fixed inset-0 z-[70] md:hidden bg-background">
+              <div className="apple-container h-14 flex items-center justify-between border-b border-border/60">
+                <span className="w-10" aria-hidden="true" />
+                <a href="#" className="font-semibold text-lg tracking-tight" onClick={() => setIsMenuOpen(false)}>
+                  JBE
                 </a>
+                <button
+                    type="button"
+                    className="rounded-full h-10 w-10 flex items-center justify-center text-foreground border border-border/60 bg-background"
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="apple-container flex h-[calc(100vh-3.5rem)] flex-col pt-4 pb-8 overflow-y-auto">
+                <div className="flex flex-col">
+                  {navItems.map((item) => {
+                    const isActive = activeSection === item.href.replace("#", "")
+                    return (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            className={`border-b border-border/45 py-4 text-3xl tracking-tight transition-colors ${
+                                isActive ? "text-foreground font-semibold" : "text-foreground/70"
+                            }`}
+                            onClick={(e) => handleNavLinkClick(e, item.href)}
+                        >
+                          {item.name}
+                        </a>
+                    )
+                  })}
+                </div>
+
+                <div className="mt-auto flex items-center gap-3">
+                  <ThemeToggle />
+                  <a
+                      href="/CV/CV-Juan-Bautista-Espino.pdf"
+                      download="CV-Juan-Bautista-Espino.pdf"
+                      className="liquid-button w-full justify-center py-3"
+                      onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Download className="h-5 w-5 mr-2" />
+                    Download CV
+                  </a>
+                </div>
               </div>
             </div>
         )}
