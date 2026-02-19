@@ -16,29 +16,18 @@ export function AboutMe() {
             >
                 <div className="prose prose-slate dark:prose-invert max-w-none text-lg space-y-4">
                     <p>
-                        I am an <strong>Advanced Computer Engineering student</strong> at UADE with a strong focus on{" "}
-                        <strong>backend development</strong> and <strong>cybersecurity</strong>. My expertise lies in designing{" "}
-                        <strong>secure and scalable systems</strong>, optimizing software performance through algorithmic solutions,
-                        and ensuring robust <strong>data integrity</strong>.
-                    </p>
-
-
-                    <p>
-                        I hold certifications in{" "}
-                        <strong>Google Cybersecurity, Linux/SQL, and Microsoft Azure Security (AZ-500)</strong>, which have
-                        strengthened my ability to implement security best practices, manage cloud infrastructures, and safeguard
-                        systems against cyber threats.
+                        I am a <strong>Computer Engineering student at UADE</strong> focused on{" "}
+                        <strong>backend development</strong> and <strong>cybersecurity</strong>. I enjoy building reliable services,
+                        clean data flows, and secure-by-default solutions.
                     </p>
                     <p>
-                        Proficient in <strong>Java, Python, and SQL</strong>, I have developed multiple academic projects applying{" "}
-                        <strong>object-oriented programming</strong>, data structures, and database management. I am experienced in{" "}
-                        <strong>agile methodologies</strong>, particularly <strong>Scrum</strong>, to efficiently develop and deploy
-                        scalable applications.
+                        I work mainly with <strong>Java, Python, SQL, TypeScript, and React</strong>. Across academic and personal
+                        projects, I apply <strong>OOP, algorithms, and data structures</strong> to deliver maintainable software with
+                        practical problem-solving.
                     </p>
                     <p>
-                        Passionate about problem-solving and system optimization, I continuously seek to improve my technical skills
-                        and apply innovative solutions to complex challenges in <strong>backend development</strong> and{" "}
-                        <strong>cybersecurity</strong>.
+                        I am currently looking for <strong>internship or junior backend opportunities</strong> where I can contribute
+                        to product development while continuing to grow in software engineering and cloud security.
                     </p>
                     <div className="mt-6 flex items-center">
                         <a

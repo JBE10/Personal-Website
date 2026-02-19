@@ -9,12 +9,11 @@ export default function DownloadCV() {
             className="rounded-full px-6 py-6 h-auto gap-2"
         >
             <a
-                href="/Juan-Bautista-Espino-CV.pdf"
-                download
-                aria-label="Descargar CV"
+                href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
+                aria-label="Solicitar CV"
             >
                 <Download className="h-5 w-5" />
-                Download CV
+                Request CV
             </a>
         </Button>
     )

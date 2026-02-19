@@ -17,11 +17,12 @@ export function Header() {
                 >
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/10 shadow-xl">
-                            <Image src="/images/juan-bautista-espino.jpg" alt="Profile Photo" fill className="object-cover" priority />
+                            <Image src="/placeholder-user.jpg" alt="Profile Photo" fill className="object-cover" priority />
                         </div>
                         <div className="text-center md:text-left">
                             <h1 className="text-4xl md:text-5xl font-semibold mb-2">Juan Bautista Espino</h1>
-                            <p className="text-xl text-muted-foreground">Backend Developer & Network Security Analyst</p>
+                            <p className="text-xl text-muted-foreground">Backend Developer & Cybersecurity Student</p>
+                            <p className="mt-2 text-sm text-primary font-medium">Open to internships and junior backend roles</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center md:items-end gap-4 z-10">
@@ -31,12 +32,11 @@ export function Header() {
                             className="rounded-full px-6 py-6 h-auto flex items-center gap-2 relative z-20"
                         >
                             <a
-                                href="/Juan-Bautista-Espino-CV.pdf"
-                                download
+                                href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
                                 className="flex items-center gap-2"
                             >
                                 <Download className="h-5 w-5" />
-                                <span>Download CV</span>
+                                <span>Request CV</span>
                             </a>
                         </Button>
                         <div className="flex items-center gap-3">

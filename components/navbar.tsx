@@ -103,12 +103,11 @@ export function Navbar() {
               Certifications
             </a>
             <a
-                href="/Juan-Bautista-Espino-CV.pdf"
-                download
+                href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
                 className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               <Download className="h-4 w-4 mr-2" />
-              Download CV
+              Request CV
             </a>
             <ThemeToggle />
           </div>
@@ -165,15 +164,14 @@ export function Navbar() {
                     </a>
                 ))}
                 <a
-                    href="/Juan-Bautista-Espino-CV.pdf"
-                    download
+                    href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
                     className={`inline-flex items-center justify-center rounded-full px-4 py-3 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-400 ease-out transform w-full ${
                         isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                     }`}
                     style={{ transitionDelay: "150ms" }}
                 >
                   <Download className="h-5 w-5 mr-2" />
-                  Download CV
+                  Request CV
                 </a>
               </div>
             </div>

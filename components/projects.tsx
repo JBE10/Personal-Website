@@ -9,35 +9,35 @@ const projects = [
   {
     title: "Minimarket Management in Java",
     description:
-        "Java application for managing a minimarket product catalog. Features a graphical user interface, data persistence, and custom exception handling.",
+        "Desktop Java application to manage minimarket inventory with catalog operations, persisted data, and resilient validation flow.",
     tags: ["Java", "Swing", "Serialization", "Exceptions", "JDialog"],
     github: "https://github.com/JBE10/Minimarket-Management",
   },
   {
     title: "Personal Website",
     description:
-        "A portfolio website built with React, TypeScript, and JavaScript, featuring sections for introduction, skills, projects, and contact.",
+        "Responsive portfolio website focused on clean UX, clear technical storytelling, and recruiter-friendly navigation.",
     tags: ["React", "TypeScript", "JavaScript", "HTML", "CSS"],
     github: "https://github.com/JBE10/Personal-Website",
   },
   {
     title: "Truck Data Management and Analysis",
     description:
-        "Python program for managing and analyzing truck data, including travel times, distances, and loads. Features average calculations, sorting, and report generation.",
+        "Python CLI project to manage and analyze truck operational data, including travel times, distances, and load reports.",
     tags: ["Python", "Algorithms", "Data Analysis", "Insertion Sort"],
     github: "https://github.com/JBE10/Truck-Data-Management-and-Analysis",
   },
   {
     title: "Graph Manipulation and Analysis",
     description:
-        "Java implementation and analysis of graph data structures. Includes advanced operations, custom priority queues, and resource optimization.",
+        "Java implementation of graph structures and traversal strategies, including custom priority queue behavior for algorithmic exploration.",
     tags: ["Java", "Graphs", "Algorithms", "Data Structures"],
     github: "https://github.com/JBE10/Graph-Manipulation-and-Analysis",
   },
   {
     title: "Tourism Accommodation Management",
     description:
-        "Java application for managing locations, accommodations, and customers in the tourism sector. Features list management, validations, and data persistence.",
+        "Java management system for tourism accommodations with customer records, input validation, and persistent data handling.",
     tags: ["Java", "OOP", "ArrayList", "Data Management", "Tourism"],
     github: "https://github.com/JBE10/Tourism-Accommodation-Management",
   },
