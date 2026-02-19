@@ -5,10 +5,10 @@ import { Mail } from "lucide-react"
 
 export function AboutMe() {
     return (
-        <section id="about" className="scroll-mt-16">
+        <section id="about" className="scroll-mt-16 liquid-halo">
             <h2 className="section-title">About Me</h2>
             <motion.div
-                className="max-w-3xl mx-auto"
+                className="max-w-3xl mx-auto liquid-glass-premium p-8 md:p-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

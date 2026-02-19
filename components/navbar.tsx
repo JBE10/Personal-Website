@@ -6,10 +6,19 @@ import { useState, useEffect } from "react"
 import { Menu, X, Download } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+const navItems = [
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Certifications", href: "#certifications" },
+  { name: "Education", href: "#education" },
+]
+
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [menuRendered, setMenuRendered] = useState(false)
+  const [activeSection, setActiveSection] = useState("about")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +27,44 @@ export function Navbar() {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const getSectionFromScroll = () => {
+      const navOffset = 140
+      const sections = navItems
+          .map((item) => ({
+            id: item.href.replace("#", ""),
+            el: document.querySelector(item.href) as HTMLElement | null,
+          }))
+          .filter((entry) => Boolean(entry.el)) as Array<{ id: string; el: HTMLElement }>
+
+      if (!sections.length) return
+
+      const scrollPosition = window.scrollY + navOffset
+
+      // Pick the latest section whose top is above the nav offset.
+      let currentId = sections[0].id
+      for (const section of sections) {
+        if (scrollPosition >= section.el.offsetTop) {
+          currentId = section.id
+        }
+      }
+
+      setActiveSection((prev) => (prev === currentId ? prev : currentId))
+    }
+
+    getSectionFromScroll()
+    // Re-run once layout settles after hydration/content paint.
+    window.requestAnimationFrame(getSectionFromScroll)
+
+    window.addEventListener("scroll", getSectionFromScroll)
+    window.addEventListener("resize", getSectionFromScroll)
+
+    return () => {
+      window.removeEventListener("scroll", getSectionFromScroll)
+      window.removeEventListener("resize", getSectionFromScroll)
+    }
   }, [])
 
   // Handle menu open/close with animation timing
@@ -46,6 +93,7 @@ export function Navbar() {
       e.preventDefault()
       const element = document.querySelector(href)
       if (element) {
+        setActiveSection(href.replace("#", ""))
         element.scrollIntoView({ behavior: "smooth" })
         setIsMenuOpen(false)
       }
@@ -55,56 +103,44 @@ export function Navbar() {
   return (
       <nav
           className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-              scrolled || isMenuOpen ? "bg-background shadow-sm border-b" : "bg-transparent"
+              scrolled || isMenuOpen
+                  ? "backdrop-blur-xl border-b border-border/60 bg-background/55 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.45)]"
+                  : "bg-transparent"
           }`}
       >
         <div className="apple-container flex h-16 items-center justify-between">
           <div className="font-medium text-xl">
-            <a href="#" className="p-0 font-medium text-xl">
+            <a href="#" className="p-0 font-semibold text-xl tracking-tight">
               JBE
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a
-                href="#about"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#about")}
-            >
-              About Me
-            </a>
-            <a
-                href="#skills"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#skills")}
-            >
-              Skills
-            </a>
-            <a
-                href="#education"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#education")}
-            >
-              Education
-            </a>
-            <a
-                href="#projects"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#projects")}
-            >
-              Projects
-            </a>
-            <a
-                href="#certifications"
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
-                onClick={(e) => handleNavLinkClick(e, "#certifications")}
-            >
-              Certifications
-            </a>
+          <div className="hidden md:flex items-center gap-3">
+            <div className="rounded-full border border-border/60 bg-background/45 p-1 backdrop-blur-xl">
+              <div className="flex items-center gap-1">
+                {navItems.map((item) => {
+                  const isActive = activeSection === item.href.replace("#", "")
+                  return (
+                      <a
+                          key={item.href}
+                          href={item.href}
+                          className={`rounded-full px-3 py-1.5 text-sm transition-all ${
+                              isActive
+                                  ? "bg-primary text-primary-foreground shadow-sm"
+                                  : "text-foreground/75 hover:text-foreground hover:bg-secondary/55"
+                          }`}
+                          onClick={(e) => handleNavLinkClick(e, item.href)}
+                      >
+                        {item.name}
+                      </a>
+                  )
+                })}
+              </div>
+            </div>
             <a
                 href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
-                className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="liquid-button"
             >
               <Download className="h-4 w-4 mr-2" />
               Request CV
@@ -139,22 +175,20 @@ export function Navbar() {
         {/* Mobile Menu with gentler animations */}
         {menuRendered && (
             <div
-                className={`fixed inset-0 z-[55] md:hidden transition-all duration-500 ease-in-out bg-background border-b ${
+                className={`fixed inset-0 z-[55] md:hidden transition-all duration-500 ease-in-out bg-background/90 backdrop-blur-xl border-b ${
                     isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-10px] pointer-events-none"
                 }`}
             >
               <div className="pt-20 pb-8 px-6 flex flex-col space-y-6">
-                {[
-                  { name: "About Me", href: "#about" },
-                  { name: "Skills", href: "#skills" },
-                  { name: "Education", href: "#education" },
-                  { name: "Projects", href: "#projects" },
-                  { name: "Certifications", href: "#certifications" },
-                ].map((item, index) => (
+                {navItems.map((item, index) => (
                     <a
                         key={item.name}
                         href={item.href}
-                        className={`text-2xl font-medium text-foreground transition-all duration-400 ease-out transform ${
+                        className={`text-2xl font-medium transition-all duration-400 ease-out transform rounded-xl px-3 py-2 ${
+                            activeSection === item.href.replace("#", "")
+                                ? "text-primary bg-primary/10 border border-primary/25"
+                                : "text-foreground"
+                        } ${
                             isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                         }`}
                         style={{ transitionDelay: `${index * 30}ms` }}
@@ -165,7 +199,7 @@ export function Navbar() {
                 ))}
                 <a
                     href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
-                    className={`inline-flex items-center justify-center rounded-full px-4 py-3 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-400 ease-out transform w-full ${
+                    className={`liquid-button py-3 text-base w-full transition-all duration-400 ease-out transform ${
                         isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                     }`}
                     style={{ transitionDelay: "150ms" }}

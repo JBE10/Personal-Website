@@ -17,13 +17,13 @@ const education = [
 
 export function Education() {
     return (
-        <section id="education" className="scroll-mt-16">
+        <section id="education" className="scroll-mt-16 liquid-halo">
             <h2 className="section-title">Education</h2>
             <div className="max-w-4xl mx-auto space-y-8">
                 {education.map((edu, index) => (
                     <motion.div
                         key={index}
-                        className="bg-secondary/30 backdrop-blur-sm rounded-3xl p-8 border border-border/50"
+                        className="liquid-glass-premium p-8"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}

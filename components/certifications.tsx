@@ -74,13 +74,13 @@ const certifications = [
 
 export function Certifications() {
   return (
-      <section id="certifications" className="scroll-mt-16">
+      <section id="certifications" className="scroll-mt-16 liquid-halo">
         <h2 className="section-title">Certifications</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
               <motion.div
                   key={index}
-                  className="bg-card/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-border/50 transition-all duration-300 hover:shadow-lg hover:border-border/80"
+                  className="liquid-glass-premium overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}

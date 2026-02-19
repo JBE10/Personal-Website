@@ -7,10 +7,10 @@ import { motion } from "framer-motion"
 
 export function Header() {
     return (
-        <div className="relative overflow-hidden bg-gradient-to-b from-background to-secondary/20 pt-24 pb-16">
+        <div className="relative overflow-hidden pt-24 pb-16">
             <div className="apple-container">
                 <motion.div
-                    className="flex flex-col md:flex-row items-center justify-between gap-10"
+                    className="liquid-glass-strong liquid-halo p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-10"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -21,7 +21,7 @@ export function Header() {
                         </div>
                         <div className="text-center md:text-left">
                             <h1 className="text-4xl md:text-5xl font-semibold mb-2">Juan Bautista Espino</h1>
-                            <p className="text-xl text-muted-foreground">Backend Developer & Cybersecurity Student</p>
+                            <p className="text-xl text-muted-foreground">Backend Developer and IT</p>
                             <p className="mt-2 text-sm text-primary font-medium">Open to internships and junior backend roles</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ export function Header() {
                         <Button
                             asChild
                             size="lg"
-                            className="rounded-full px-6 py-6 h-auto flex items-center gap-2 relative z-20"
+                            className="liquid-button rounded-full px-6 py-6 h-auto flex items-center gap-2 relative z-20"
                         >
                             <a
                                 href="mailto:bautiespino@icloud.com?subject=CV%20Request%20-%20Juan%20Bautista%20Espino"
@@ -41,7 +41,7 @@ export function Header() {
                         </Button>
                         <div className="flex items-center gap-3">
 
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
+                            <Button variant="secondary" size="icon" className="liquid-button rounded-full h-10 w-10 relative z-20" asChild>
                                 <a
                                     href="https://www.linkedin.com/in/jbespino/"
                                     target="_blank"
@@ -51,7 +51,7 @@ export function Header() {
                                     <Linkedin className="h-5 w-5" />
                                 </a>
                             </Button>
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
+                            <Button variant="secondary" size="icon" className="liquid-button rounded-full h-10 w-10 relative z-20" asChild>
                                 <a
                                     href="https://github.com/JBE10"
                                     target="_blank"
@@ -61,7 +61,7 @@ export function Header() {
                                     <Github className="h-5 w-5" />
                                 </a>
                             </Button>
-                            <Button variant="secondary" size="icon" className="rounded-full h-10 w-10 relative z-20" asChild>
+                            <Button variant="secondary" size="icon" className="liquid-button rounded-full h-10 w-10 relative z-20" asChild>
                                 <a
                                     href="mailto:bautiespino@icloud.com"
                                     aria-label="Email"
@@ -75,8 +75,8 @@ export function Header() {
             </div>
 
             {/* Background decorative elements */}
-            <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
-            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+            <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
         </div>
     )
 }

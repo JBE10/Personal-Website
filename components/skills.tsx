@@ -27,14 +27,14 @@ export function Skills() {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
     return (
-        <section id="skills" className="scroll-mt-16">
+        <section id="skills" className="scroll-mt-16 liquid-halo">
             <h2 className="section-title">Technical Skills</h2>
 
             <div className="space-y-20">
                 {skillCategories.map((category, index) => (
                     <motion.div
                         key={index}
-                        className="space-y-8"
+                        className="space-y-8 liquid-glass-premium p-6 md:p-8"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
@@ -57,12 +57,11 @@ export function Skills() {
                                     onHoverEnd={() => setHoveredSkill(null)}
                                 >
                                     <div
-                                        className={`
-                      h-20 flex items-center justify-center rounded-2xl px-6 py-4
-                      ${hoveredSkill === skill ? "bg-primary/10 text-primary" : "bg-secondary/80 text-foreground/80"}
-                      transition-all duration-300 ease-out
-                      backdrop-blur-sm
-                    `}
+                                        className={`h-20 flex items-center justify-center rounded-2xl px-6 py-4 border transition-all duration-300 ease-out backdrop-blur-sm ${
+                                            hoveredSkill === skill
+                                                ? "bg-primary/16 text-primary border-primary/30"
+                                                : "bg-secondary/45 text-foreground/80 border-border/40"
+                                        }`}
                                     >
                                         <span className="text-base font-medium">{skill}</span>
                                     </div>
