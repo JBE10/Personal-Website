@@ -7,6 +7,34 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
+    title: "OSINT Platform",
+    description:
+        "Python-based OSINT platform for passive web investigations with target management, auditable jobs, and normalized evidence workflows.",
+    tags: ["Python", "FastAPI", "PostgreSQL", "Redis", "Celery", "Docker"],
+    github: "https://github.com/JBE10/osint-platform",
+  },
+  {
+    title: "LifeOps",
+    description:
+        "Personal SaaS concept to manage life operations with business-style tracking for training, finance, and productivity metrics.",
+    tags: ["Next.js", "TypeScript", "SaaS", "Productivity", "Dashboard"],
+    github: "https://github.com/JBE10/lifeops",
+  },
+  {
+    title: "HOPPO Backend",
+    description:
+        "Backend service for a PC components e-commerce project, focused on product management, business logic, and scalable API design.",
+    tags: ["Java", "Spring Boot", "REST API", "E-commerce", "Docker"],
+    github: "https://github.com/JBE10/HOPPO_Backend",
+  },
+  {
+    title: "IPC Tracker",
+    description:
+        "Daily IPC tracker that collects supermarket price data in Argentina and generates structured datasets for price variation analysis.",
+    tags: ["Python", "Data Analysis", "CSV", "Automation", "Scraping"],
+    github: "https://github.com/JBE10/IPC",
+  },
+  {
     title: "Minimarket Management in Java",
     description:
         "Desktop Java application to manage minimarket inventory with catalog operations, persisted data, and resilient validation flow.",
