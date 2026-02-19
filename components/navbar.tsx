@@ -137,12 +137,12 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center gap-3 justify-self-end">
             <a
-                href="#contact"
+                href="/CV/CV-Juan-Bautista-Espino.pdf"
+                download="CV-Juan-Bautista-Espino.pdf"
                 className="liquid-button"
-                onClick={(e) => handleNavLinkClick(e, "#contact")}
             >
               <Download className="h-4 w-4 mr-2" />
-              Request CV
+              Download CV
             </a>
             <ThemeToggle />
           </div>
@@ -197,15 +197,15 @@ export function Navbar() {
                     </a>
                 ))}
                 <a
-                    href="#contact"
+                    href="/CV/CV-Juan-Bautista-Espino.pdf"
+                    download="CV-Juan-Bautista-Espino.pdf"
                     className={`liquid-button py-3 text-base w-full transition-all duration-400 ease-out transform ${
                         isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[-5px]"
                     }`}
                     style={{ transitionDelay: "150ms" }}
-                    onClick={(e) => handleNavLinkClick(e, "#contact")}
                 >
                   <Download className="h-5 w-5 mr-2" />
-                  Request CV
+                  Download CV
                 </a>
               </div>
             </div>
