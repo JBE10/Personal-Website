@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 const navItems = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Certifications", href: "#certifications" },
   { name: "Education", href: "#education" },
@@ -21,16 +22,9 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState("about")
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
     const getSectionFromScroll = () => {
+      setScrolled(window.scrollY > 10)
+
       const navOffset = 140
       const sections = navItems
           .map((item) => ({
@@ -41,12 +35,13 @@ export function Navbar() {
 
       if (!sections.length) return
 
-      const scrollPosition = window.scrollY + navOffset
+      // Use a point within the visible viewport for smoother active-section transitions.
+      const viewportProbe = window.scrollY + navOffset + window.innerHeight * 0.2
 
-      // Pick the latest section whose top is above the nav offset.
+      // Pick the latest section whose top is above the probe point.
       let currentId = sections[0].id
       for (const section of sections) {
-        if (scrollPosition >= section.el.offsetTop) {
+        if (viewportProbe >= section.el.offsetTop) {
           currentId = section.id
         }
       }

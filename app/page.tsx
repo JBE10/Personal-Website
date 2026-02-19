@@ -3,10 +3,12 @@
 import { motion } from "framer-motion"
 import { Header } from "@/components/header"
 import { AboutMe } from "@/components/about-me"
+import { Experience } from "@/components/experience"
 import { Projects } from "@/components/projects"
 import { Certifications } from "@/components/certifications"
 import { Education } from "@/components/education"
 import { Skills } from "@/components/skills"
+import { FloatingContactCta } from "@/components/floating-contact-cta"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -54,6 +56,10 @@ export default function Home() {
                 </motion.div>
 
                 <motion.div variants={sectionVariants}>
+                    <Experience />
+                </motion.div>
+
+                <motion.div variants={sectionVariants}>
                     <Skills />
                 </motion.div>
 
@@ -95,6 +101,8 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
+
+            <FloatingContactCta />
         </div>
     )
 }
